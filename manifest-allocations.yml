@@ -2,10 +2,10 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-fouadhamdi.cfapps.io
+  - route: allocations-pal-fouadhamdi-review.cfapps.io
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://allocations-pal-fouadhamdi.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: http://registrations-pal-fouadhamdi-review.cfapps.io
   services:
   - tracker-allocations-database

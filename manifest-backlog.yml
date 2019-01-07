@@ -2,10 +2,10 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-fouadhamdi.cfapps.io
+  - route: backlog-pal-fouadhamdi-review.cfapps.io
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://backlog-pal-fouadhamdi.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: http://registrations-pal-fouadhamdi-review.cfapps.io
   services:
   - tracker-backlog-database
