@@ -1,5 +1,7 @@
 package io.pivotal.pal.tracker.allocations;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -15,8 +17,11 @@ import org.springframework.web.client.RestOperations;
 @Configuration
 @ConditionalOnProperty(value = "application.oauth-enabled", matchIfMissing = true)
 public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
+  private static final Logger LOGGER = LoggerFactory.getLogger(OauthResourceServerConfig.class);
+
   @Override
   public void configure(HttpSecurity http) throws Exception {
+    LOGGER.info(">> configure OauthResourceServerConfig");
     http.authorizeRequests().anyRequest().authenticated();
   }
 

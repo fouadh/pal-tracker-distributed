@@ -18,6 +18,10 @@ public class ActuatorSecurityConfig extends WebSecurityConfigurerAdapter {
         .requestMatchers(EndpointRequest.to("info")).permitAll()
         .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ACTUATOR")
         .and()
-        .httpBasic();
+        .httpBasic()
+        .and()
+        .authorizeRequests()
+        .anyRequest()
+        .authenticated();
   }
 }
