@@ -9,8 +9,8 @@ applications:
   - tracker-registration-database
   - tracker-service-registry
   - tracker-sso
-    env:
-      GRANT_TYPE: client_credentials
-      SPRING_SECURITY_USER_NAME: actuator
-      SPRING_SECURITY_USER_PASSWORD: operations4red
-      SPRING_SECURITY_USER_ROLES: ACTUATOR
+  env:
+    GRANT_TYPE: client_credentials
+    SPRING_SECURITY_USER_NAME: actuator
+    SPRING_SECURITY_USER_PASSWORD: operations4red
+    SPRING_SECURITY_USER_ROLES: ACTUATOR
