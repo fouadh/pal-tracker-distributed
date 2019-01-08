@@ -12,10 +12,9 @@ public class ActuatorSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-        .requestMatcher(EndpointRequest.toAnyEndpoint())
         .authorizeRequests()
         .requestMatchers(EndpointRequest.to("info")).permitAll()
-        .anyRequest().hasRole("ACTUATOR") // Any other endpoint
+        .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ACTUATOR")
         .and()
         .httpBasic();
   }
